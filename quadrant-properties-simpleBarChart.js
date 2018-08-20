@@ -23,20 +23,6 @@ namespace("fx.quadrantProperties")["simpleBarChart"] = (function (ko, _, leesa, 
 
     var isArray = _.isArray;
 
-    //COLOR PALETTE
-    // var application = fxDataContext.Application;
-    // var configurationApi = application.configuration;
-    // var enumState = fxEnum.state;
-    // var colorPalettesState = enumState.stateAndMessage();
-    // var colorPaletteKey = "colorPalette";
-    //COLOR PALETTE
-    //#endregion
-
-    //var colorsKey = "colors";
-
-    //DECIMAL POINT
-    // var decimalPointKey = "decimalPoint";
-    //DECIMAL POINT
 
     function viewModel(params) {
 
@@ -59,15 +45,6 @@ namespace("fx.quadrantProperties")["simpleBarChart"] = (function (ko, _, leesa, 
         });
 
 
-        //COLOR PALETTE
-        // var koColorPalettes = observableArray();
-        // var koSelectedColor = observableArray();
-        // var koSelectedColorName = observable("Select a color");
-        // var koTitle = observable();
-        // var koValue = observable();
-        // var colorDropdown = observable("0px");
-        //COLOR PALETTE
-
         //console.log(koVisual(), koQuadrant()) // uncomment to see what you have
         var properties = [{
                 propertyName: "valueField"
@@ -89,13 +66,7 @@ namespace("fx.quadrantProperties")["simpleBarChart"] = (function (ko, _, leesa, 
             initProperties();
             initSubscribers();
             initValues();
-            //COLOR PALETTE
-            // initColor();
-            //COLOR PALETTE
             initEvents();
-            //DECIMAL POINT
-            // initDecimalWatcher();
-            //DECIMAL POINT
         }
 
         function initProperties() {
@@ -138,53 +109,6 @@ namespace("fx.quadrantProperties")["simpleBarChart"] = (function (ko, _, leesa, 
             }
         }
 
-        //COLOR PALETTE
-        // function initColor() {
-        //     var visual = koVisual();
-        //     parameters = visual.parameters();
-        //     if (!visual || !parameters)
-        //         return;
-        //     loadColorPalettes();
-        //     colorDropdown("0px");
-        //     if (parameters[colorPaletteKey])
-        //         koSelectedColor(parameters[colorPaletteKey]);
-        //     if (parameters[colorPaletteKey + "Name"])
-        //         koSelectedColorName(parameters[colorPaletteKey + "Name"]);
-        //     if (parameters[colorPaletteKey+"Title"])
-        //         koTitle(parameters[colorPaletteKey+"Title"]);
-        //     if (parameters[colorPaletteKey+"Content"])
-        //         koValue(parameters[colorPaletteKey+"Content"]);
-
-        //     return;
-        // }
-        // function changeColorEvent(value) {
-        //     var visual = koVisual();
-        //     koSelectedColorName(value.name);
-        //     koSelectedColor(value.collection);
-
-        //     setParameterValue(colorPaletteKey, value.collection);
-        //     setParameterValue(colorPaletteKey + "Name", value.name);
-        //     refreshQuadrant();
-        // }
-
-        // function loadColorPalettes() {
-        //     colorPalettesState.setLoading();
-        //     var option = {
-        //         success: onSuccess,
-        //         fail: onFail
-        //     };
-        //     configurationApi.getColorPalettes(option);
-
-        //     function onSuccess(data) {
-        //         koColorPalettes(data);
-        //         colorPalettesState.setCompleted();
-        //     }
-
-        //     function onFail() {
-        //         colorPalettesState.setError();
-        //     }
-        // }
-        //COLOR PALETTE
         function initEvents() {
             projectionsChangeEventSubscription = koProjections.subscribe(function (newProjectionContexts) {
                 var source = koSource();
@@ -209,27 +133,6 @@ namespace("fx.quadrantProperties")["simpleBarChart"] = (function (ko, _, leesa, 
 
         }
 
-        //DECIMAL POINT
-        // function initDecimalWatcher() {
-        //     console.log(quadrantComposer.projections);
-        //     quadrantComposer.projections.subscribe(function (values) {
-        //         var decimalPoint = null;
-        //         for (var i = 0; i < values.length; i++) {
-        //             var projectionContexts = values[i].entity.projectionContexts;
-        //             console.log(projectionContexts);
-        //             if (projectionContexts)
-        //                 for (var j = 0; j < projectionContexts.length; j++)
-        //                     if (projectionContexts[j].dType == "decimalProjectionContext")
-        //                         decimalPoint = projectionContexts[j].precision;
-        //         }
-        //         console.log("Decimal Point:", decimalPoint);
-        //         if (decimalPoint != null)
-        //             setParameterValue(decimalPointKey, decimalPoint);
-        //         else
-        //             removeParameterValue(decimalPointKey)
-        //     });
-        // }
-        //DECIMAL POINT
         //#region Converter
 
         //#endregion

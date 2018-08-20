@@ -19,11 +19,6 @@ namespace("leesa.visual")["simpleBarChart"] = (function (leesa, _, d3) {
 			}
 
 
-			var _visualIdentifier = "simpleBarChart"; //uncomment to see what values you have
-			console.log(_visualIdentifier + " Quadrant:", quadrant)
-			console.log(_visualIdentifier + " Visual:", visual)
-			console.log(_visualIdentifier + " Data:", data);
-			console.log(_visualIdentifier + " Parameters:", parameters);
 			AmCharts.makeChart(content[0], {
 				type: "serial",
 				theme: "light",
