@@ -1,0 +1,19 @@
+{
+    "visualName": "simpleBarChart",
+    "displayName": "simpleBarChart",
+    "groupId": "visual.sandbox.simpleBarChart",
+    "packageId": "sample",
+    "author": "Hans Yulian",
+    "version": "1.0.0",
+    "scripts": [
+        "simpleBarChart.js"
+    ],
+    "styles": [
+        "simpleBarChart.css"
+    ],
+    "canConfigure3D": false,
+    "canConfigureLegend": false,
+    "canConfigureAnimation": false,
+    "canConfigureColor": false,
+    "canConfigureThreshold": false
+}
